@@ -5,7 +5,7 @@ context("Bayesian Linear Regression")
 
 test_that("Main tables results match", {
     set.seed(1)
-    options <- jasptools::analysisOptions("RegressionLinearBayesian")
+    options <- jaspTools::analysisOptions("RegressionLinearBayesian")
     options$modelPrior <- "beta.binomial"
     options$dependent <- "contNormal"
     options$covariates <- "contGamma"
@@ -16,7 +16,7 @@ test_that("Main tables results match", {
     options$postSummaryTable <- TRUE
     options$descriptives <- TRUE
     
-    results <- jasptools::run("RegressionLinearBayesian", "test.csv", options)
+    results <- jaspTools::run("RegressionLinearBayesian", "test.csv", options)
     table <- results[["results"]][["basreg"]][["collection"]][["basreg_modelComparisonTable"]][["data"]]
     expect_equal_tables(
         table,
@@ -47,7 +47,7 @@ test_that("Main tables results match", {
 
 test_that("Coefficient plots match", {
     set.seed(1)
-    options <- jasptools::analysisOptions("RegressionLinearBayesian")
+    options <- jaspTools::analysisOptions("RegressionLinearBayesian")
     options$modelPrior <- "beta.binomial"
     options$dependent <- "contNormal"
     options$covariates <- list("contGamma", "debCollin1", "contcor2")
@@ -59,7 +59,7 @@ test_that("Coefficient plots match", {
     options$plotInclusionProbabilities <- TRUE
     options$plotCoefficientsPosterior <- TRUE
     
-    results <- jasptools::run("RegressionLinearBayesian", "test.csv", options)
+    results <- jaspTools::run("RegressionLinearBayesian", "test.csv", options)
     
     inclusionProbabilities <- results[['state']][['figures']][[1]][["obj"]]
     expect_equal_plots(inclusionProbabilities, "inclusionProbabilities", "RegressionLinearBayesian")
@@ -70,7 +70,7 @@ test_that("Coefficient plots match", {
 
 test_that("Residuals plots match", {
     set.seed(1)
-    options <- jasptools::analysisOptions("RegressionLinearBayesian")
+    options <- jaspTools::analysisOptions("RegressionLinearBayesian")
     options$modelPrior <- "beta.binomial"
     options$dependent <- "contNormal"
     options$covariates <- list("contGamma")
@@ -80,7 +80,7 @@ test_that("Residuals plots match", {
     options$plotResidualsVsFitted <- TRUE
     options$plotQQplot <- TRUE
     
-    results <- jasptools::run("RegressionLinearBayesian", "test.csv", options)
+    results <- jaspTools::run("RegressionLinearBayesian", "test.csv", options)
     
     residualsVsFitted <- results[['state']][['figures']][[1]][["obj"]]
     expect_equal_plots(residualsVsFitted, "residualsVsFitted", "RegressionLinearBayesian")
@@ -91,7 +91,7 @@ test_that("Residuals plots match", {
 
 test_that("Models plots match", {
     set.seed(1)
-    options <- jasptools::analysisOptions("RegressionLinearBayesian")
+    options <- jaspTools::analysisOptions("RegressionLinearBayesian")
     options$modelPrior <- "beta.binomial"
     options$dependent <- "contNormal"
     options$covariates <- list("contGamma", "contExpon", "contcor1")
@@ -104,7 +104,7 @@ test_that("Models plots match", {
     options$plotModelComplexity <- TRUE
     options$plotModelProbabilities <- TRUE
     
-    results <- jasptools::run("RegressionLinearBayesian", "test.csv", options)
+    results <- jaspTools::run("RegressionLinearBayesian", "test.csv", options)
     
     logPosteriorOdds <- results[['state']][['figures']][[1]][["obj"]]
     expect_equal_plots(logPosteriorOdds, "logPosteriorOdds", "RegressionLinearBayesian")
@@ -117,7 +117,7 @@ test_that("Models plots match", {
 })
 
 test_that("Model priors match", {
-    options <- jasptools::analysisOptions("RegressionLinearBayesian")
+    options <- jaspTools::analysisOptions("RegressionLinearBayesian")
     options$dependent <- "contNormal"
     options$covariates <- list("contGamma", "contExpon", "contcor1")
     options$modelTerms <- list(
@@ -204,7 +204,7 @@ test_that("Model priors match", {
     for (nm in names(modelPriors)) {
         set.seed(1)
         options[names(modelPriors[[nm]])] <- modelPriors[[nm]]
-        results <- jasptools::run("RegressionLinearBayesian", "test.csv", options)
+        results <- jaspTools::run("RegressionLinearBayesian", "test.csv", options)
         table <- results[["results"]][["basreg"]][["collection"]][["basreg_modelComparisonTable"]][["data"]]
         expect_equal_tables(
             table,

@@ -1,6 +1,6 @@
 context("Discover Distributions - Bernoulli")
 
-options <- jasptools::analysisOptions("LDbernoulli")
+options <- jaspTools::analysisOptions("LDbernoulli")
 options$.meta <- list(newVariableName = list(containsColumn = TRUE), variable = list(
   containsColumn = TRUE))
 options$ciInterval <- TRUE
@@ -18,7 +18,7 @@ options$ppplot <- TRUE
 options$summary <- TRUE
 options$variable <- "Bern10(p=0.5)"
 set.seed(1)
-results <- jasptools::run("LDbernoulli", "Distributions.csv", options)
+results <- jaspTools::run("LDbernoulli", "Distributions.csv", options)
 
 
 test_that("Bar plot matches", {
