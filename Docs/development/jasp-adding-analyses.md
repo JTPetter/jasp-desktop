@@ -68,6 +68,6 @@ The best way to create one of these is to look at existing ones.
 Create the corresponding R file
 -------------------------------
 
-JASP analyses are implemented in R and stored in the `JASP-Engine/JASP/R` directory.
+JASP analyses are implemented in R and QML and have their own repositories on github.
 
 

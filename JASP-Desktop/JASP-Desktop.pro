@@ -196,10 +196,10 @@ win32 {
 	maketranslations.commands += $$quote(copy $${RESOURCES_TRANSLATIONS}\*.qm $${RESOURCES_DESTINATION_TRANSLATIONS}\ ) &&
 
     #Create R-JASP.mo translation file. (Need to add GETTEXT location to PATH environment.)
-    maketranslations.commands += $$quote($$PWD/../Tools/translate.cmd $$_R_HOME/bin \"$${GETTEXT_LOCATION}\" $$PWD/../Tools $$PWD/../JASP-Engine/JASP ) &&
+    maketranslations.commands += $$quote($$PWD/../Tools/translate.cmd $$_R_HOME/bin \"$${GETTEXT_LOCATION}\" $$PWD/../Tools $$PWD/../JASP-Engine/jaspBase ) &&
 
-    #Create R-JASPgraphs.mo translation file. (Need to add GETTEXT location to PATH environment.)
-    maketranslations.commands += $$quote($$PWD/../Tools/translate.cmd $$_R_HOME/bin \"$${GETTEXT_LOCATION}\" $$PWD/../Tools $$PWD/../JASP-Engine/JASPgraphs )
+    #Create R-jaspGraphs.mo translation file. (Need to add GETTEXT location to PATH environment.)
+    maketranslations.commands += $$quote($$PWD/../Tools/translate.cmd $$_R_HOME/bin \"$${GETTEXT_LOCATION}\" $$PWD/../Tools $$PWD/../JASP-Engine/jaspGraphs )
 
     maketranslations.depends  = copyres
   }
@@ -233,8 +233,8 @@ unix {
     #Create R-JASP.mo translation file. (Need to add GETTEXT location to PATH environment.)
 	maketranslations.commands +=  Rscript $$PWD/../Tools/translate.R $$PWD/../JASP-Engine/JASP ;
 
-    #Create R-JASPgraphs.mo translation file. (Need to add GETTEXT location to PATH environment.)
-	maketranslations.commands +=  Rscript $$PWD/../Tools/translate.R $$PWD/../JASP-Engine/JASPgraphs ;
+    #Create R-jaspGraphs.mo translation file. (Need to add GETTEXT location to PATH environment.)
+	maketranslations.commands +=  Rscript $$PWD/../Tools/translate.R $$PWD/../JASP-Engine/jaspGraphs ;
 
 
     maketranslations.depends  = copyres
