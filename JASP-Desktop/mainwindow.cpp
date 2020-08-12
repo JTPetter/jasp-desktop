@@ -505,9 +505,9 @@ void MainWindow::loadQML()
 
 	//Load the ribbonmodel modules now because we have an actual qml context to do so in.
 	_ribbonModel->loadModules(	
-		{ 	"Descriptives", "TTests", "ANOVA", "MixedModels", "Regression", "Frequencies", "Factor" },
-		{ 	"Audit", "BAIN", "DiscoverDistributions" , "EquivalenceTTests", "JAGS", "MachineLearning",  //Those modules will need to be put back
-			"MetaAnalysis", "Network", "Reliability", "SEM", "SummaryStatistics", "VisualModeling" });
+		{ 	"jaspDescriptives", "jaspTTests", "jaspAnova", "jaspMixedModels", "jaspRegression", "jaspFrequencies", "jaspFactor" },
+		{ 	"jaspAudit", "jaspBain", "jaspDistributions" , "jaspEquivalenceTTests", "jaspJags", "jaspMachineLearning",
+			"jaspMetaAnalysis", "jaspNetwork", "jaspReliability", "jaspSem", "jaspSummaryStatistics", "jaspVisualModeling" });
 
 
 }

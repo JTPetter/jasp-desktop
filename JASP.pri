@@ -14,7 +14,7 @@ DEFINES += "CURRENT_R_VERSION=\"$$CURRENT_R_VERSION\""
 
 #JASP Version
 JASP_VERSION_MAJOR      = 0
-JASP_VERSION_MINOR      = 13
+JASP_VERSION_MINOR      = 15
 JASP_VERSION_REVISION   = 1
 JASP_VERSION_BUILD      = 0 #Should be ignored because the code handling it is buggy as hell (aka https://www.youtube.com/watch?v=otCpCn0l4Wo )
 
